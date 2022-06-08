@@ -1,0 +1,196 @@
+<?php
+session_start();
+require_once('DBConnection.php');
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Font-Awesome-master/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./summernote/summernote-lite.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./summernote/summernote-lite.min.js"></script>
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+    <script src="./DataTables/datatables.min.js"></script>
+    <script src="./Font-Awesome-master/js/all.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/script.js"></script>
+    <style>
+        .contain{  
+            height: 200px;
+            position: relative;
+        }  
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin-left: 500px;
+        }
+        .navbar-item{
+            display: flex;
+        }
+        .btun{
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 40%;
+        }
+        
+    </style>
+</head>
+<body class="bg-light" style="background-image:url(images/lugans.jpg);background-repeat: no-repeat;background-size: cover;">
+    <main class="d-flex flex-column h-100">
+    <nav class="fw-bold navbar navbar-expand-lg navbar-dark bg-transaparent position-inherit bg-gradient text-dark bg-opacity-0 w-100" id="topNavBar" style="z-index:2">
+        <div class="container">
+            <a class="navbar-brand" href="./">
+            <h1>OMA</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo ($page == 'home')? 'active' : '' ?>" aria-current="page" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo ($page == 'about')? 'active' : '' ?>" aria-current="page" href="./abt.html">About Us</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 1px">
+                        <a class="btn btn-secondary bg-transparent  text-light border-0" href="apply.html">Pay Bills or Apply</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 1px">
+                        <a class="btn btn-secondary bg-transparent  text-light border-0" href="./abt.html">Payment Info</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 1px">
+                        <a onclick="myfucn()" class="btn btn-secondary bg-transparent  text-light border-0">Application Status</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 1px">
+                        <a class="btn btn-secondary bg-transparent  text-light border-0" href="admin/login.html">Admin</a>
+                    </li>
+                </ul>
+                
+            <script>
+                
+
+              function myfucn(){
+                  alert("Please Wait for your Application update via Email.");
+              }
+          </script>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="py-3 w-100 flex-grow-1" id="page-container">
+        <div class="dynamic_alert pt-5 container">
+                
+            </div>
+        </div>
+      
+        
+    </div>
+    
+    </main>
+    <div class="contain">
+        <div class="vertical-center">
+            <input id="num" type="number" class="input" placeholder="2022XXXXX">
+            <button onclick="func()" class="btun">Search Account</button>
+        </div>
+    </div>
+    Welcome to OMA Online Website
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur mauris eu sapien molestie, id iaculis dolor facilisis. Aliquam et augue sodales, aliquam leo vitae, efficitur nisi. Pellentesque ipsum lorem, tristique sed massa sed, blandit dignissim nunc. Donec sit amet ante maximus dolor tincidunt elementum. Ut ullamcorper quam eu pretium faucibus. In faucibus blandit nisl, non luctus metus tincidunt ac. In scelerisque justo faucibus ligula dictum tempus. Nulla vel lacus a nulla mollis auctor mollis sit amet ante. Integer tristique, velit vel scelerisque faucibus, augue ex consectetur libero, sit amet maximus purus libero in felis. Donec et nunc sem. Ut convallis enim placerat ex consequat scelerisque. Praesent in lacus at sapien lacinia vulputate.
+
+Maecenas imperdiet, lectus sit amet tristique facilisis, urna purus hendrerit risus, viverra sollicitudin ipsum ipsum id mi. Maecenas pulvinar purus sit amet sem congue, id condimentum ligula euismod. Nam ut nunc aliquam, iaculis dolor eu, condimentum nisi. Aenean et orci a lectus facilisis pellentesque eget non risus. Phasellus convallis dolor eu ipsum sagittis, eu malesuada turpis ornare. Nullam lacinia dignissim justo, sit amet ornare risus. Donec vitae dignissim urna, quis efficitur ipsum. Curabitur in tincidunt urna, nec imperdiet dui. Donec et sodales nisi. Nam vestibulum in tellus vel pharetra. Proin sapien mauris, scelerisque ut ipsum eget, laoreet luctus odio. Praesent varius gravida erat, a varius felis venenatis ac.
+
+Duis cursus dapibus tempus. Nam rhoncus eu lacus sed lacinia. Praesent in elementum lectus, vel venenatis nisl. Curabitur sed mi efficitur, blandit lacus vel, euismod odio. Etiam consequat ligula et lectus ultrices volutpat. Proin enim leo, vehicula eu leo vitae, tincidunt consequat arcu. Nullam quis nunc augue. Nam sed faucibus justo, in finibus quam. Nulla mollis, leo vel dapibus ornare, nunc neque laoreet nunc, viverra sollicitudin odio sapien eget nulla. Sed vulputate tellus suscipit odio elementum aliquam.
+
+Suspendisse cursus ultricies turpis, id volutpat velit dignissim eget. Vestibulum scelerisque mattis arcu eu gravida. Vestibulum elementum, mi in dictum posuere, magna purus auctor leo, non pellentesque mauris enim tempus neque. Quisque dapibus tincidunt nisi, facilisis vulputate ligula accumsan a. Cras porttitor aliquam lobortis. Fusce eu dolor vel nibh ullamcorper mattis et vitae elit. Nam ac congue erat. Vestibulum efficitur dui id ipsum malesuada, et rhoncus quam tempor. Pellentesque et ultrices ipsum. Mauris at auctor erat.
+
+Maecenas mollis ornare tortor quis placerat. Nam vehicula venenatis orci in iaculis. Quisque mattis turpis in ornare aliquam. Curabitur condimentum ante in elit convallis, dictum vulputate purus facilisis. Aliquam at porttitor libero. Vestibulum varius, massa ut interdum pharetra, tortor augue dignissim massa, eget ullamcorper ex dui non ligula. Ut blandit nisl congue nisi sagittis, sagittis ullamcorper libero egestas. Proin condimentum enim a suscipit tristique. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla commodo risus consequat orci dignissim imperdiet. Cras pulvinar lacinia euismod.
+    <div class="modal fade" id="uni_modal" role='dialog' data-bs-backdrop="static" data-bs-keyboard="true">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer py-1">
+            <button type="button" class="btn btn-sm rounded-0 btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
+            <button type="button" class="btn btn-sm rounded-0 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="uni_modal_secondary" role='dialog' data-bs-backdrop="static" data-bs-keyboard="true">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer py-1">
+            <button type="button" class="btn btn-sm rounded-0 btn-primary" id='submit' onclick="$('#uni_modal_secondary form').submit()">Save</button>
+            <button type="button" class="btn btn-sm rounded-0 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirm_modal" role='dialog'>
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+            <div class="modal-header py-2">
+            <h5 class="modal-title">Confirmation</h5>
+        </div>
+        <div class="modal-body">
+            <div id="delete_content"></div>
+        </div>
+        <div class="modal-footer py-1">
+            <button type="button" class="btn btn-primary btn-sm rounded-0" id='confirm' onclick="">Continue</button>
+            <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var wow = new WOW()
+            wow.init();
+        })
+        function func(){
+            var x = document.getElementById("num").value;
+            if (x == "202243215"){
+                alert(x + ' Hello Mr. Refil currently you dont have any pending bills. Thank you!');
+            }
+            else if(x == "202212345"){
+                alert(x + ' Hello Ms. Teodosio your latest bill is ₱1240 please pay before June 15. Thank you!');
+            }
+            else{
+                alert(x + ' is not registered in the system!');
+            }
+            
+        }
+    </script>
+</body>
+</html>
